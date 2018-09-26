@@ -1,0 +1,49 @@
+.App {
+  text-align: center;
+}
+
+.container {
+  width:60%;
+  background: rgba(235, 199, 199, 0.541);
+  border: 1px solid;
+  min-height: 80vh;
+  float: left;
+}
+
+.cartContainer {
+  width:38%;
+  min-height: 80vh;
+  float: left;
+  background: #ccc;
+  border: 1px solid;
+}
+.product {
+  width:30%;
+  float: left;
+  padding: 20px;
+  margin: 20px 40px 20px 70px;
+  border: 1px solid;
+}
+
+.productImage{
+  
+  width: 40%;
+  padding: 10px;
+  margin: 10px;
+}
+.productTitle{
+  width: 100%;
+  padding: 10px;
+  margin: 10px;
+}
+.cartItems{
+  width: 100%;
+  padding: 10px;
+  margin: 10px;
+}
+
+.cartItemsRemoveBtn{
+  
+  padding: 10px;
+  margin: 10px;
+}

@@ -1,0 +1,26 @@
+[  
+    {  
+       "id":101,
+       "title":"TV",
+       "price":20000,
+       "inventry":5
+    },
+    {  
+       "id":111,
+       "title":"MObile",
+       "price":20000,
+       "inventry":5
+    },
+    {  
+       "id":108,
+       "title":"Fridge",
+       "price":20000,
+       "inventry":5
+    },
+    {  
+       "id":167,
+       "title":"AirConditioner",
+       "price":20000,
+       "inventry":5
+    }
+ ]
