@@ -1,11 +1,11 @@
 
-export const fetchProducts = (products) => {
+/*export const fetchProducts = (products) => {
   console.log(" inside fetchProducts Action", products);
   return {
     type: 'FETCH_PRODUCTS',
     products: products
   }
-}
+}*/
 
 export const addToCart = (product) => {
   console.log(" inside addToCart Action", product);

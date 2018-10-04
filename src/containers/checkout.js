@@ -22,22 +22,32 @@ class Checkout extends Component{
        // const orderTotal =  this.props.itemsInCart.reduce(calcTotal());
         
 
-        const products = (item,orderTotal)=>{
+        const products = (item)=>{
            
             return (
-            <div className="">
-             <div key={item.product.id}>{item.product.title}  <label>price :  {item.product.price*item.product.fullfillment}</label> <label>   quantity : </label>
-             <label>{item.product.fullfillment}</label>
-             </div>
+            <div key={item.product.id} className="row">
+             <div className="col-md-4">Title : {item.product.title}  </div>
+             <div className="col-md-4"> <label>price:  {item.product.price*item.product.fullfillment}</label></div>
+             <div className="col-md-4"><label>Qty: {item.product.fullfillment}</label></div>
+           
+             
           </div>)
           }
        
         console.log("Checkout itemsInCart :",this.props.itemsInCart);
         return (
-        <div>
-             {this.props.itemsInCart.map(products)}
-             <div>orderTotal : {orderTotal}</div>
-             <button>Place Order</button>
+        <div className="row">
+        <div className="row"> CheckOut !!</div>
+        <div className="col-md-6">
+        
+        {this.props.itemsInCart.map(products)}
+        
+        </div>
+        
+        <div className="form-group col-md-6"> 
+            <label className="label label-default"> orderTotal : {orderTotal}</label>
+            <div><button className="btn btn-danger">Place Order</button></div> 
+         </div>
         </div>
         );
         }

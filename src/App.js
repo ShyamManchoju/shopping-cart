@@ -8,16 +8,18 @@ class App extends Component {
 
   render (){
     return (
-        <div className="App">
-        <nav>
+        <div >
+        <nav className="App">
         <NavLink to="/productsList"> Products List  </NavLink>
         </nav>
-        
+        <div  className="container">
         <Route path="/productsList" component={ ProductsList }></Route>
         <Route path="/checkout" component={Checkout} ></Route>
-       
+        </div>
+        
         
         </div>
+
     );
 }
 }

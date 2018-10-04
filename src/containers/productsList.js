@@ -18,23 +18,23 @@ class ProductsList extends Component {
     const { products } = this.props;
     console.log("products  inside render :", products);
     const productsList = (prod) => {
-      return <Product id={prod.id} key={prod.id} title={prod.title}
+      return <Product  id={prod.id} key={prod.id} title={prod.title}
         price={prod.price} inventory={prod.inventory} addToCart={() => { this.props.addToCart(prod) }}
       />
     }
     const product = products.map(productsList);
 
     return (
-      <div >
-        <div className="container">
+      <div className="row ">
+        <div className="form-group col-md-7">
+       
           {product}
-         
+       
         </div>
-        <div className="cartContainer">
+        <div className="col-md-5">
           <Cart />
-         
+          
         </div>
-        
       </div>
     );
   }

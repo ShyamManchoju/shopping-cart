@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import { connect } from 'react-redux'
 import { addItem, removeItem, removeItemInCart } from '../actions'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Checkout from './checkout'
 
 //import {addItemCount} from '../actions'
@@ -16,20 +16,32 @@ class Cart extends Component {
     if(this.props.itemsInCart.length ===0 ){
       return ( <div > 
       <h1>Cart Items !!</h1>
-      <h3>Please add Items to the Cart </h3>
+      <h4>Please add Items to the Cart </h4>
       </div>);
     }
 
     const products = (item)=>{
       return (
-      <div className="cartItems">
-       <div key={item.product.id}>
-       <button className="cartItemsRemoveBtn" onClick={()=>this.props.removeItemInCart(item.product)}>remove</button>{item.product.title}  
-       <label className="cartItems"> price : {item.product.price*item.product.fullfillment}</label><label> quantity : </label>
-       <button onClick={()=>{this.props.removeItem(item.product)}}>-</button>
-       <input style={style} type="text" value={item.product.fullfillment}/>
-       <button onClick={()=>{this.props.addItem(item.product)}}>+</button>
+      <div key={item.product.id} className="row form-group">
+       
+       <div className="col-md-1">
+        <button className="btn btn-danger" onClick={()=>this.props.removeItemInCart(item.product)}>x</button> 
        </div>
+       <div className="col-md-4">
+          Item: {item.product.title} 
+       </div>
+        
+       <div className="row col-md-3">
+          amt: {item.product.price*item.product.fullfillment}
+       </div>
+       <div className="row col-md-4">
+        <div className="col-md-3">Qty:</div>
+        <div className="col-md-3"><button className="btn btn-success" onClick={()=>{this.props.removeItem(item.product)}}>-</button></div>
+        <div className="col-md-3"><input className="input-lg" style={style} type="text" value={item.product.fullfillment}/></div>
+        <div className="col-md-3"><button className="btn btn-success" onClick={()=>{this.props.addItem(item.product)}}>+</button></div>
+       </div>
+       
+       
     </div>)}
 
     const style = {
@@ -37,13 +49,14 @@ class Cart extends Component {
     }
 
     return (
-      <div > 
-      <h1>Cart Items !!</h1>
-      <div>
+      <div className="row"> 
+      <div ><h1>Cart Items !!</h1></div>
+      <div className="row">
           {this.props.itemsInCart.map(products)}
       </div>
-      <Link to="/checkout"> Checkout </Link>
-      
+      <div >
+      <NavLink className="row btn btn-success" to="/checkout"> Checkout </NavLink>
+      </div>
       </div>
     );
   }
