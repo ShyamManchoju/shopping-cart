@@ -5,7 +5,7 @@ export const fetchProducts = function fetchProducts() {
     console.log('I am herer');
  return function (dispatch) { 
    
-  const request  =  axios.get("http://localhost:4000/products");
+  const request  =  axios.get("https://fathomless-caverns-72794.herokuapp.com/products");
   
   console.log("inside reducer : ");
 
